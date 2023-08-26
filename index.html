@@ -37,7 +37,7 @@
     font-size: 1.5em;
   }
   .navbar-links {
-    display: none; /* Hide the links by default on mobile */
+    display: none;
     gap: 20px;
   }
   .navbar-links a {
@@ -46,21 +46,21 @@
   }
   .center-line {
     text-align: center;
-    margin-top: 20vh; /* Adjust vertical positioning */
-    color: #ff6b6b; /* Different color */
-    font-size: 2.5em; /* Bigger font size */
+    margin-top: 20vh;
+    color: #ff6b6b;
+    font-size: 2.5em;
   }
 
-  /* Responsive adjustments */
   @media (min-width: 768px) {
     .navbar {
       align-items: flex-start;
     }
     .navbar-links {
       display: flex;
+      align-items: center; /* Center links vertically */
     }
     .center-line {
-      margin-top: 10vh; /* Adjust vertical positioning for larger screens */
+      margin-top: 10vh;
     }
   }
 </style>
