@@ -14,8 +14,8 @@
   .navbar {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 10px 20px;
   }
   .logo-container {
@@ -37,7 +37,7 @@
     font-size: 1.5em;
   }
   .navbar-links {
-    display: flex;
+    display: none; /* Hide the links by default on mobile */
     gap: 20px;
   }
   .navbar-links a {
@@ -49,6 +49,19 @@
     margin-top: 20vh; /* Adjust vertical positioning */
     color: #ff6b6b; /* Different color */
     font-size: 2.5em; /* Bigger font size */
+  }
+
+  /* Responsive adjustments */
+  @media (min-width: 768px) {
+    .navbar {
+      align-items: flex-start;
+    }
+    .navbar-links {
+      display: flex;
+    }
+    .center-line {
+      margin-top: 10vh; /* Adjust vertical positioning for larger screens */
+    }
   }
 </style>
 <title>Tabbed Website</title>
