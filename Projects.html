@@ -14,8 +14,8 @@
   .navbar {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; /* Align items at the top */
-    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 10px 20px;
   }
   .logo-container {
@@ -44,6 +44,44 @@
     color: white;
     text-decoration: none;
   }
+  .hamburger {
+    display: none;
+    cursor: pointer;
+  }
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+  }
+  
+  @media (max-width: 768px) {
+    .navbar {
+      justify-content: space-between;
+    }
+    .hamburger {
+      display: block;
+    }
+    .navbar-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 10px;
+      width: 150px;
+      border-radius: 5px;
+    }
+    .navbar-links.show {
+      display: flex;
+    }
+    .navbar-links a {
+      color: white;
+      text-decoration: none;
+      margin: 5px 0;
+    }
+  }
 </style>
 <title>Tabbed Website</title>
 </head>
@@ -57,13 +95,25 @@
       <span>Architecture Studio</span>
     </div>
   </div>
-  <div class="navbar-links">
+  <div class="hamburger" onclick="toggleNavbar()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <div class="navbar-links" id="navbarLinks">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
-	<a href="Projects.html">Projects</a>
+    <a href="Projects.html">Projects</a>
     <a href="contact.html">Contact</a>
   </div>
 </div>
+
+<script>
+  function toggleNavbar() {
+    var navbarLinks = document.getElementById("navbarLinks");
+    navbarLinks.classList.toggle("show");
+  }
+</script>
 
 </body>
 </html>
