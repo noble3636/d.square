@@ -36,17 +36,6 @@
   .main-title {
     font-size: 1.5em;
   }
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-  }
-  .hamburger div {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 3px 0;
-  }
   .navbar-links {
     display: flex;
     gap: 20px;
@@ -55,19 +44,23 @@
     color: white;
     text-decoration: none;
   }
-  .center-line {
-    text-align: center;
-    margin-top: 20vh;
-    color: #ff6b6b;
-    font-size: 2.5em;
+  .hamburger {
+    display: none;
+    cursor: pointer;
   }
-
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+  }
+  
   @media (max-width: 768px) {
     .navbar {
       justify-content: space-between;
     }
     .hamburger {
-      display: flex;
+      display: block;
     }
     .navbar-links {
       display: none;
@@ -113,10 +106,6 @@
     <a href="Projects.html">Projects</a>
     <a href="contact.html">Contact</a>
   </div>
-</div>
-
-<div class="center-line">
-  <p></p>
 </div>
 
 <script>
