@@ -18,10 +18,34 @@
     background-color: rgba(0, 0, 0, 0.7);
     padding: 10px 20px;
   }
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
   .logo-img {
     width: 40px;
     height: 40px;
     margin-right: 10px;
+  }
+  .company-name {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2em;
+    color: white;
+  }
+  .main-title {
+    font-size: 1.5em;
+  }
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
   }
   .navbar-links {
     display: flex;
@@ -31,20 +55,76 @@
     color: white;
     text-decoration: none;
   }
+  .center-line {
+    text-align: center;
+    margin-top: 20vh;
+    color: #ff6b6b;
+    font-size: 2.5em;
+  }
+
+  @media (max-width: 768px) {
+    .navbar {
+      justify-content: space-between;
+    }
+    .hamburger {
+      display: flex;
+    }
+    .navbar-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 10px;
+      width: 150px;
+      border-radius: 5px;
+    }
+    .navbar-links.show {
+      display: flex;
+    }
+    .navbar-links a {
+      color: white;
+      text-decoration: none;
+      margin: 5px 0;
+    }
+  }
 </style>
 <title>Tabbed Website</title>
 </head>
 <body>
 
 <div class="navbar">
-  <img class="logo-img" src="logo_new.jpg" alt="Logo">
-  <div class="navbar-links">
+  <div class="logo-container">
+    <img class="logo-img" src="logo_new.jpg" alt="Logo">
+    <div class="company-name">
+      <span class="main-title">DESIGN.SQUARE</span>
+      <span>Architecture Studio</span>
+    </div>
+  </div>
+  <div class="hamburger" onclick="toggleNavbar()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <div class="navbar-links" id="navbarLinks">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="Projects.html">Projects</a>
     <a href="contact.html">Contact</a>
   </div>
 </div>
+
+<div class="center-line">
+  <p></p>
+</div>
+
+<script>
+  function toggleNavbar() {
+    var navbarLinks = document.getElementById("navbarLinks");
+    navbarLinks.classList.toggle("show");
+  }
+</script>
 
 </body>
 </html>
